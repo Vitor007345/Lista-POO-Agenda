@@ -16,6 +16,14 @@ public class Contato implements Serializable{
 		this.email = email;
 	}
 	
+	public Contato(String serialized) {
+		String[] atributos = serialized.split(";");
+		this.nome = atributos[0];
+		this.telefone = atributos[1];
+		this.endereco = atributos[2];
+		this.email = atributos[3];
+	}
+	
 	
 	public String getNome() {
 		return nome;
@@ -42,8 +50,9 @@ public class Contato implements Serializable{
 		this.email = email;
 	}
 	
+	@Override
 	public String serialize() {
-		return "Contato;" + this.getNome() + ";" + this.getTelefone() + ";" + this.getEndereco() + ";" + this.getEmail();
+		return this.getNome() + ";" + this.getTelefone() + ";" + this.getEndereco() + ";" + this.getEmail();
 	}
 	
 	
