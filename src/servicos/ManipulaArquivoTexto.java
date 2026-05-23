@@ -62,9 +62,18 @@ public class ManipulaArquivoTexto {
 	
 		Collection<S> listaResultado = new ArrayList<>();
 		
+		if (!leitor.hasNextLine()) {
+	        return listaResultado; 
+	    }
 		
 		String primeiraLinha = leitor.nextLine();
-		int tamanhoLista = Integer.parseInt(primeiraLinha);
+		int tamanhoLista;
+		try {
+			tamanhoLista = Integer.parseInt(primeiraLinha);
+		}catch(NumberFormatException e) {
+			return listaResultado;
+		}
+		
 		
 		
 		for (int i = 0; i < tamanhoLista; i++) {

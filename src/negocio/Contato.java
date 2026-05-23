@@ -54,6 +54,14 @@ public class Contato implements Serializable{
 	public String serialize() {
 		return this.getNome() + ";" + this.getTelefone() + ";" + this.getEndereco() + ";" + this.getEmail();
 	}
+
+	@Override
+	public String toString() {
+		return "nome=" + nome + ", telefone=" + telefone + ", endereco=" + endereco + ", email=" + email;
+	}
+	
+	
+	
 	
 	
 	
